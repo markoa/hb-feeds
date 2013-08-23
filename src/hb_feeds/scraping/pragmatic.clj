@@ -26,6 +26,6 @@
 
 (defn extract [node]
   (let [title  (first (html/select [node] title-selector))
-        url    (first (html/select [node] url-selector))
+        url    (first (html/attr-values (first (html/select [node] url-selector)) :href))
         result (map html/text [title url])]
     (zipmap [:title :url] (map #(re-gsub #"\n" "" %) result))))

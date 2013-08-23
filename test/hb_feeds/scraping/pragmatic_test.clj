@@ -19,3 +19,9 @@
         last-book  (last (get-books))]
     (is (= "Seven Web Frameworks in Seven Weeks" (get first-book :title)))
     (is (= "The Pragmatic Programmer" (get last-book :title)))))
+
+(deftest books-should-have-urls
+  (let [first-book (first (get-books))
+        last-book  (last (get-books))]
+    (is (= "http://pragprog.com/book/7web/seven-web-frameworks-in-seven-weeks" (get first-book :url)))
+    (is (= "http://pragprog.com/book/tpp/the-pragmatic-programmer" (get last-book :url)))))
