@@ -9,7 +9,6 @@
   [url]
   (html/html-resource (java.net.URL. url)))
 
-; test/hb_feeds/scraping/pragmatic.html
 (defn fetch-file
   "Load a HTML resource from file, based on enlive-html/html-resource.
   Use for testing."
@@ -18,10 +17,10 @@
 
 (def book-selector [:div.book])
 
-(defn books []
-  (html/select (fetch-url base-url) book-selector))
+(defn books [nodes]
+  (html/select nodes book-selector))
 
-(def title-selector [:h2])
+(def title-selector [:h4])
 
 (def url-selector [:a])
 
@@ -30,6 +29,3 @@
         url    (first (html/select [node] url-selector))
         result (map html/text [title url])]
     (zipmap [:title :url] (map #(re-gsub #"\n" "" %) result))))
-
-(defn print-books []
-  (map extract (books)))
