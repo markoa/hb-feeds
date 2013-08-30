@@ -1,18 +1,8 @@
 (ns hb-feeds.scraping.pragmatic
-  (:require [net.cgrand.enlive-html :as html]))
+  (:require [net.cgrand.enlive-html :as html]
+            [hb-feeds.scraping.common :as common]))
 
 (def base-url "http://pragprog.com/categories/all")
-
-(defn fetch-url
-  "Load a HTML resource from URL, based on enlive-html/html-resource."
-  [url]
-  (html/html-resource (java.net.URL. url)))
-
-(defn fetch-file
-  "Load a HTML resource from file, based on enlive-html/html-resource.
-  Use for testing."
-  [path]
-  (html/html-resource (.toURL (java.io.File. path))))
 
 (def book-selector [:div.book])
 
@@ -34,4 +24,4 @@
 (defn latest-books
   "Returns a map of latest book titles from pragprog.com."
   []
-  (map extract (select-books (fetch-url base-url))))
+  (map extract (select-books (common/fetch-url base-url))))
