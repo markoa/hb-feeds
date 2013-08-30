@@ -12,7 +12,7 @@
     (is (= "The Pragmatic Bookshelf | Our Titles" title))))
 
 (defn get-books []
-  (map extract (books (fetch-file "test/hb_feeds/scraping/pragmatic.html"))))
+  (map extract (select-books (fetch-file "test/hb_feeds/scraping/pragmatic.html"))))
 
 (deftest books-have-titles
   (let [first-book (first (get-books))
