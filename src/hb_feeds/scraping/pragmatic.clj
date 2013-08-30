@@ -22,10 +22,10 @@
 
 (def title-selector [:h4])
 
-(def url-selector [:a])
-
 (defn extract [node]
-  (let [title  (first (html/select [node] title-selector))
-        url    (first (html/attr-values (first (html/select [node] url-selector)) :href))
-        result (map html/text [title url])]
-    (zipmap [:title :url] (map #(re-gsub #"\n" "" %) result))))
+  (let [title       (first (html/select [node] title-selector))
+        url         (first (html/attr-values (first (html/select [node] [:a])) :href))
+        cover-url   (first (html/attr-values (first (html/select [node] [:div.thumbnail :img])) :src))
+        description (first (html/select [node] [:div.details :p]))
+        result      (map html/text [title url cover-url description])]
+    (zipmap [:title :url :cover-url :description] (map #(re-gsub #"\n" "" %) result))))
