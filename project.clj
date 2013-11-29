@@ -5,6 +5,4 @@
             :url "http://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [org.clojure/clojure-contrib "1.2.0"]
-                 [enlive "1.1.1"]]
-  :source-path "src"
-  :main hb-feeds.core)
+                 [enlive "1.1.1"]])
