@@ -1,13 +1,13 @@
-(ns hb-feeds.scraping.pragmatic-test
+(ns hb.scraper.pragmatic-test
   (:require [clojure.test :refer :all]
-            [hb-feeds.scraping.common :as common]
-            [hb-feeds.scraping.pragmatic :refer :all]))
+            [hb.scraper.common :as common]
+            [hb.scraper.pragmatic :refer :all]))
 
 (deftest base-scraping-url
   (is (= "http://pragprog.com/categories/all" base-url)))
 
 (defn get-books []
-  (map extract (select-books (common/fetch-file "test/hb_feeds/scraping/pragmatic.html"))))
+  (map extract (select-books (common/fetch-file "test/hb/scraper/pragmatic.html"))))
 
 (deftest books-have-titles
   (let [first-book (first (get-books))

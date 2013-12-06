@@ -1,4 +1,4 @@
-(ns hb-feeds.scraping.common
+(ns hb.scraper.common
   (:require [net.cgrand.enlive-html :as html]))
 
 (defn fetch-url

@@ -1,14 +1,14 @@
-# hb-feeds
+# hb-scraper
 
 A Clojure library for fetching latest programming book releases. Implemented publishers are:
 
-- Manning (scraped)
-- Pragmatic Bookshelf (scraped)
+- Manning
+- Pragmatic Bookshelf
 
-## Usage
+### Usage
 
 ```clojure
-user=> (require '[hb-feeds.scraping.manning :as manning])
+user=> (require '[hb.scraper.manning :as manning])
 
 user=> (manning/latest-books)
 ({:description "Guides you step by step ...",
@@ -17,7 +17,7 @@ user=> (manning/latest-books)
   :title "The Art of Unit Testing, Second Edition"} ...)
 ```
 
-## License
+### License
 
 Copyright © 2013 Marko Anastasov
 

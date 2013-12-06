@@ -1,13 +1,13 @@
-(ns hb-feeds.scraping.manning-test
+(ns hb.scraper.manning-test
   (:require [clojure.test :refer :all]
-            [hb-feeds.scraping.common :as common]
-            [hb-feeds.scraping.manning :refer :all]))
+            [hb.scraper.common :as common]
+            [hb.scraper.manning :refer :all]))
 
 (deftest base-scraping-url
   (is (= "http://www.manning.com" base-url)))
 
 (defn get-books []
-  (map extract (recent-releases (select-books (common/fetch-file "test/hb_feeds/scraping/manning.html")))))
+  (map extract (recent-releases (select-books (common/fetch-file "test/hb/scraper/manning.html")))))
 
 (deftest books-have-titles
   (let [first-book (first (get-books))

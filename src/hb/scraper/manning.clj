@@ -1,6 +1,6 @@
-(ns hb-feeds.scraping.manning
+(ns hb.scraper.manning
   (:require [net.cgrand.enlive-html :as html]
-            [hb-feeds.scraping.common :as common]))
+            [hb.scraper.common :as common]))
 
 (def base-url "http://www.manning.com")
 
