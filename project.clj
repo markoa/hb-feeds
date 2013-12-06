@@ -1,6 +1,6 @@
-(defproject hb-feeds "0.1.0-SNAPSHOT"
-  :description "exploring"
-  :url "http://example.com/FIXME"
+(defproject hb-feeds "0.1.0"
+  :description "Clojure library for fetching latest programming book releases."
+  :url "https://github.com/markoa/hb-feeds"
   :license {:name "MIT"
             :url "http://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.5.1"]
