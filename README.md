@@ -5,7 +5,7 @@ A Clojure library for fetching latest programming book releases. Implemented pub
 - Manning
 - Pragmatic Bookshelf
 
-## Installtion
+## Installation
 
 Add the following dependency to your `project.clj` file:
 
