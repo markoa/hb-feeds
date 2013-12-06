@@ -1,35 +1,24 @@
 # hb-feeds
 
-FIXME: description
+A Clojure library for fetching latest programming book releases. Implemented publishers are:
 
-## Installation
-
-Download from http://example.com/FIXME.
+- Manning (scraped)
+- Pragmatic Bookshelf (scraped)
 
 ## Usage
 
-FIXME: explanation
+```clojure
+user=> (require '[hb-feeds.scraping.manning :as manning])
 
-    $ java -jar hb-feeds-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+user=> (manning/latest-books)
+({:description "Guides you step by step ...",
+  :cover-url "http://www.manning.com/osherove2/osherove2_3d.gif",
+  :url "http://www.manning.com/osherove2",
+  :title "The Art of Unit Testing, Second Edition"} ...)
+```
 
 ## License
 
-Copyright © 2013 FIXME
+Copyright © 2013 Marko Anastasov
 
-Distributed under the Eclipse Public License, the same as Clojure.
+Distributed under the MIT License.
