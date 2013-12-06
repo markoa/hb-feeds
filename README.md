@@ -5,7 +5,15 @@ A Clojure library for fetching latest programming book releases. Implemented pub
 - Manning
 - Pragmatic Bookshelf
 
-### Usage
+## Installtion
+
+Add the following dependency to your `project.clj` file:
+
+    [hb-scraper "0.1.0"]
+
+The library is published on [Clojars](https://clojars.org/hb-scraper). Latest version is 0.1.0.
+
+## Usage
 
 ```clojure
 user=> (require '[hb.scraper.manning :as manning])
@@ -17,7 +25,7 @@ user=> (manning/latest-books)
   :title "The Art of Unit Testing, Second Edition"} ...)
 ```
 
-### License
+## License
 
 Copyright © 2013 Marko Anastasov
 
